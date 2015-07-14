@@ -1,6 +1,19 @@
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
 repositories {
    mavenCentral()                                              
 }
 
+war.archiveName "restwebservice.war"
 
-apply plugin: 'war'
+def springVersion='4.1.7.RELEASE'
+dependencies{
+
+            compile 'org.springframework:spring-core:'+springVersion
+            compile 'org.springframework:spring-web:'+springVersion
+            compile 'org.springframework:spring-webmvc:'+springVersion
+
+}
