@@ -9,7 +9,10 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
+import java.util.Arrays;
 import java.util.List;
+
+import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
 
 @Slf4j
@@ -42,20 +45,20 @@ public class Example extends JUnitStories {
 
     @Override
     protected List<String> storyPaths() {
-        return new StoryFinder().findPaths("/opt/nisum/workspaces/git/restwebservice/trunk/src/test/resources/", "stories/*.story", "");
+//        return new StoryFinder().findPaths("/opt/nisum/workspaces/git/restwebservice/trunk/build/classes/test/../../resources/test/jbehave/stories/", "stories/*.story", "");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info(codeLocationFromClass(this.getClass()).getFile());
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(), Arrays.asList("**/*.story"), null);
     }
 
 
-
-//    public static void main(String[] args) {
-//        DirectoryScanner scanner = new DirectoryScanner();
-//        scanner.setBasedir("/opt/nisum/workspaces/git/gs-spring-boot/complete/build/resources/test");
-//        scanner.setIncludes(new String[]{"**/**/**/stories/*.story"});
-//        scanner.scan();
-//        System.out.println("flag");
-//        System.out.println(scanner.getIncludedFiles()[0]);
-//
-//    }
 
 }
 

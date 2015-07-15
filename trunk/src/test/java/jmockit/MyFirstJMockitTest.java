@@ -2,7 +2,9 @@ package jmockit;
 
 import com.megatz.bo.A;
 import com.megatz.bo.B;
-import mockit.Expectations;
+import com.megatz.bo.BasicPerson;
+import com.megatz.controller.MovieController;
+import lombok.extern.slf4j.Slf4j;
 import mockit.Injectable;
 import mockit.Mocked;
 import mockit.Tested;
@@ -12,14 +14,13 @@ import org.junit.runner.RunWith;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import static org.junit.Assert.assertNotNull;
+import java.util.List;
 
 /**
  * Created by marcos on 06-07-15.
  */
 @RunWith(JMockit.class)
+@Slf4j
 public class MyFirstJMockitTest {
     @Injectable
     B b;
@@ -29,16 +30,39 @@ public class MyFirstJMockitTest {
     @Tested
     A a;
 
+    @Injectable
+    BasicPerson basicPerson;
+
+    @Mocked
+    MovieController movieController;
+
+
     @Mocked
     PreparedStatement preparedStatement;
 
-    @Test
-    public void testJmockitStuff() throws SQLException {
-        new Expectations(){{
-            a.getConnection().prepareStatement(anyString);returns(preparedStatement);
-        }};
+    @Mocked
+    List<BasicPerson> listPersonas;
 
-        assertNotNull(a.getConnection().prepareStatement("ASDFASDF"));
+//    @Test
+//    public void testJmockitStuff() throws SQLException {
+//        new Expectations(){{
+//            a.getConnection().prepareStatement(anyString);returns(preparedStatement);
+//        }};
+//
+////        assertNotNull(a.getConnection().prepareStatement(Matchers.anyanyString));
+//
+//    }
+//
+    @Test
+    public void testMovieControllerShouldReturnListBasicPersons() {
+//        new Expectations(){{
+//            movieController.getGreeting(anyString); returns(asList(new BasicPerson(),new BasicPerson()));
+//        }};
+
+
+//        assertNotNull(movieController.getGreeting("asdf"));
+        log.info("asdfasdfsd");
+
 
     }
 
