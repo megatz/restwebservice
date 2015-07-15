@@ -45,16 +45,6 @@ public class Example extends JUnitStories {
 
     @Override
     protected List<String> storyPaths() {
-//        return new StoryFinder().findPaths("/opt/nisum/workspaces/git/restwebservice/trunk/build/classes/test/../../resources/test/jbehave/stories/", "stories/*.story", "");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info(codeLocationFromClass(this.getClass()).getFile());
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
-        log.info("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
         return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(), Arrays.asList("**/*.story"), null);
     }
 
