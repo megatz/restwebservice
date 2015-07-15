@@ -1,6 +1,6 @@
 package com.megatz.controller;
 
-import org.springframework.ui.Model;
+import com.megatz.dto.Persona;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/service/greeting/")
 public class MovieController {
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public String getGreeting(@PathVariable String name, Model model) {
+    public Persona getGreeting(@PathVariable String name) {
         String result="Hello "+name;
-        return result;
+        Persona persona = new Persona();
+        persona.setName("asdfasdf");
+        persona.setLastName("kkkkkkkkkkk");
+        return persona;
     }
 }
