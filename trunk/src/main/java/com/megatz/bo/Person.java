@@ -1,14 +1,12 @@
-package com.megatz.dto;
+package com.megatz.bo;
 
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created by marcos on 14-07-15.
- */
+
 @Getter
 @Setter
-public class Persona {
+public class Person extends BasicPerson {
     private String name;
     private String lastName;
 }
