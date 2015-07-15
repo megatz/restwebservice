@@ -2,3 +2,6 @@
 *.jar
 *.class
 *.war
+target/*
+build/*
+
