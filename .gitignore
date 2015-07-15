@@ -2,6 +2,6 @@
 *.jar
 *.class
 *.war
-target/*
-build/*
+target/
+build/
 
