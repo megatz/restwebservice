@@ -1,7 +1,7 @@
-
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'idea'
+
 
 repositories {
    mavenCentral()                                              
@@ -28,3 +28,11 @@ dependencies {
 
 }
 
+
+
+task copyStories(type:Copy){
+    from "${projectDir}/src/test/resources/jbehave/stories"
+    into "${buildDir}/classes/test/jbehave/stories"
+}
+
+build.finalizedBy(copyStories)
